@@ -1,0 +1,43 @@
+{% extends '@SOPlatform/layout.html.twig' %}
+
+{% block body %}
+<main>
+    <h1>Comment ça fonctionne ?</h1>
+
+    <p>L'idée de départ de ce site était de créer des petits sondages entre collègues de boulot pour organiser des sorties. Mais il peut être utilisé comme outil de sondage classique. </p>
+
+    <hr>
+
+    <h2>Première étape s'inscrire</h2>
+    <p>Pour celà il suffit de s'inscrire en remplissant <a href="{{ path('fos_user_registration_register') }}" id="lien">ce formulaire </a>sur la page d'accueil et de renseigner : </p>
+    <ul>
+        <li>Votre nom</li>
+        <li>Votre prénom</li>
+        <li>Votre email</li>
+        <li>Votre mot de passe</li>
+    </ul>
+    
+    <hr>
+
+    <h2>Seconde étape créer le sondage dans son espace </h2>
+    <img class="imageAide" src="{{ asset('img/nouveauSondage.PNG')}}" alt="exemple de créatioin d'un sondage">
+
+    <hr>
+
+    <h2>Troisième étape ajouter des propositions </h2>
+    <img class="imageAide" src="{{ asset('img/ajoutProposition.PNG') }}" alt="exemple d'ajout de propositions">
+
+    <hr>
+
+    <h2>Quatrième  étape partager votre sondage grace au lien</h2>
+    <img class="imageAide" src="{{ asset('img/lien.PNG')}}" alt="exemple de lien">
+
+    <hr>
+
+    <h2>Dernière étape vos amis remplissent le sondage </h2>
+    <img class="imageAide" src="{{asset('img/sondage.PNG')}}" alt="visuel du sondage final">
+    <p><small>* Ces derniers n'auront pas besoin de s'enregistrer pour répondre au sondage</small></p>
+
+</main>
+
+{% endblock %}

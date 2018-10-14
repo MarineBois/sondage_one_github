@@ -1,0 +1,15 @@
+<nav>
+    <a id="logo" href="{{ path('so_platform_homepage') }}">Sondage One </a>
+   {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <div>
+            <p>Connecté en tant que {{ app.user.username }} </p>
+            <a href="{{ path('so_user_profile') }}" id="espace"><i class="fas fa-cogs"></i> Votre espace</a>
+            <a href="{{ path('fos_user_security_logout') }}" id="deconnexion"><i class="fas fa-sign-out-alt"></i>Déconnexion</a>
+        </div>	
+    {% else %}
+        <div>
+            <a href="{{ path('fos_user_security_login') }}"><i class="fas fa-sign-in-alt"></i> Se connecter</a>
+            <a href="{{ path('fos_user_registration_register') }}"><i class="fas fa-sign-in-alt"></i> S'inscrire</a>
+        </div>	
+    {% endif %}
+</nav>

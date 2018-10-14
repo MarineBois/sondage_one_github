@@ -1,0 +1,12 @@
+<nav>
+    <a href="{{ path('so_platform_aide') }}">Aide</a>
+   {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <a href="{{ path('so_user_profile') }}" id="espace">Votre espace</a>
+        <a href="{{ path('fos_user_security_logout') }}" id="deconnexion">Déconnexion</a>
+    {% else %}
+        <a href="{{ path('fos_user_security_login') }}"><i class="fas fa-sign-in-alt"></i> Se connecter</a>
+        <a href="{{ path('fos_user_registration_register') }}"><i class="fas fa-sign-in-alt"></i> S'inscrire</a>
+    {% endif %}
+    <p>contact : contact@sondageone.fr</p>
+    <a href="https://www.marine-bois.fr" onclick="window.open(this.href); return false;">Site développé par Marine Bois</a>
+</nav>

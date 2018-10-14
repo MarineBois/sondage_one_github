@@ -1,0 +1,28 @@
+{{ form_start(form) }}
+
+{# Les erreurs générales du formulaire. #}
+{{ form_errors(form) }}
+    <fieldset>
+		<legend>Nouveau sondage</legend>
+    <div>    
+        {# Génération du label. #}
+        {{ form_label(form.titre, "Titre du sondage") }}
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.titre) }}
+        {# Génération de l'input. #}
+        {{ form_widget(form.titre) }}
+    </div>
+    <div>
+        {# Génération du label. #}
+        {{ form_label(form.libelle, "Description du sondage") }}
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors(form.libelle) }}
+        {# Génération de l'input. #}
+        {{ form_widget(form.libelle) }}
+    </div>
+    <div>
+        {{ form_widget(form.save) }}
+    </div>
+    </fieldset>
+{# Fermeture de la balise <form> du formulaire HTML #}
+{{ form_end(form) }}

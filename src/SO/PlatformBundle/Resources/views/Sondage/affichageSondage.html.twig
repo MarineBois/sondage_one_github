@@ -1,0 +1,57 @@
+{% extends '@SOPlatform/layout.html.twig' %}
+
+{% block body %}
+
+<h1>{{ sondage.titre }}</h1>
+<p>{{ sondage.libelle }}</p>
+
+<table id="affichageSondage">
+    <thead>
+        <tr>
+            <th></th>
+            {% for proposition in propositions %}
+            <th>{{ proposition.titre }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <form action="{{ action }}" method="post">
+            <td>
+                <input name="personne" placeholder="Votre pseudo*">
+            </td>
+            {% for proposition in propositions %}
+            <td>
+                <input type=checkbox id="oui" name="{{ proposition.id }}" value="{{ proposition.id }}">
+                </td>
+            {% endfor %}
+            <td>
+                <button type="submit" ><i class="far fa-check-circle"></i></button>
+            </td>
+            </form>
+        </tr>
+        {% for personne in reponsesPersonne %}
+        <tr>
+                <td>
+                    {{ (personne|first).personne }}
+                </td>
+                {% for proposition in propositions %}
+                    <td>
+                        {% for prop in personne %}
+                        {% if (prop.proposition.id == proposition.id) %}
+                            <i class="fas fa-check oui"></i>
+                        {% endif %}
+                        {% endfor %}  
+                    </td>
+                {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+    <caption align="bottom">*un pseudo ne peut pas être utilisé plusieur fois pour un même sondage</caption>
+</table>
+
+{{ include("SOPlatformBundle:Formulaire:commentaire.html.twig") }}
+
+{{ include("SOPlatformBundle:Commentaire:affichageCommentaire.html.twig") }}
+
+{% endblock body %}

@@ -1,0 +1,261 @@
+/* VARIABLES */
+:root{
+	--vertClair:#88CE7D;
+	--rouge: #e74c3c;
+	--gris: #948280;
+}
+/* FONT FACE */
+/* Appelle les polices de la page */
+
+/*GLOBAL */
+html {
+	font-family: 'Muli', sans-serif;
+	font-size: 100%;
+}
+* {
+	box-sizing: border-box;
+}
+h1, h2 {
+	text-align: center;
+}
+h2 {
+	margin-top:50px;
+	color:var(--vertClair);
+}
+a {
+	color:black;
+	text-decoration: none;
+}
+.lien:hover div {
+	background-color: var(--vertClair);
+}
+hr {
+	margin: 20px auto;
+}
+.displayNone{
+	display: none;
+}
+section {
+	margin:50px auto;
+}
+button {
+	cursor : pointer;
+}
+.imageAide {
+	max-width: 55%;
+}
+
+ul {
+	list-style: none;
+}
+/*global - formulaire */
+
+label {
+	flex-basis: 100%;
+	margin:15px 0;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	padding:10px;
+}
+
+.submit, button[type="submit"] {
+	border:none;
+	background-color: var(--vertClair);
+	padding: 5px 15px;
+	margin:15px 0;
+	flex-basis: 100%;
+}
+button[type="reset"] {
+	border:none;
+	background-color: var(--gris);
+	padding: 5px 15px;
+	margin:15px 0;
+	flex-basis: 100%;
+}
+ 
+button[type="reset"]:hover {
+	border:none;
+	background-color: var(--rouge);
+	padding: 5px 15px;
+	margin:15px 0;
+	flex-basis: 100%;
+}
+
+.oui {
+	color:var(--vertClair);
+}
+
+.non {
+	color:var(--rouge);
+}
+
+/* Balises et class appelés à plusieurs endroits dans la page */
+
+/* HEADER */
+header {
+	background-color:  var(--vertClair);
+	padding: 50px;
+}
+header nav {
+	display:flex;
+	justify-content: space-between;
+	align-items: baseline;
+}
+nav div a {
+	margin:10px;
+}
+header nav a:hover {
+	color:white;
+}
+#logo {
+	font-size: 3rem;
+}
+/* Ce qui concerne le header et la nav */
+
+
+/* INDEX.PHP */
+#formulaireIndex {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+#formulaireIndex form {
+	flex-basis: 45%;
+}
+
+.step {
+	margin-left:25px;
+}
+.lien div {
+	padding:50px;
+}
+/* MAIN */
+main {
+	max-width: 80%;
+	margin:0 auto 150px auto;
+}
+/* Ce qui concerne le corps du site */
+
+/*nouveau sondage*/
+#formulaireNouveauSondage{
+	margin:25px auto;
+	display: none;
+}
+input, textarea {
+	width:100%;
+}
+/*Sondage.php*/
+#affichageSondage {
+	margin:0 auto;
+}
+#affichageSondage td, #affichageSondage th {
+	text-align: center;
+	padding: 10px;
+}
+#sondagemobil {
+	display: none;
+}
+/* checkbox */
+
+
+/* Affichage Espace User */
+#nouveauSondage:hover {
+	color:var(--vertClair);
+}
+.vosSondages {
+	text-align: center;
+	border : 1px solid black;
+	margin: 25px 0;
+	padding: 25px;
+}
+
+.vosSondages td, .vosSondages th {
+	padding:10px;
+	border-bottom:1px solid black;
+}
+
+.votreSondage {
+	text-decoration: none;
+	font-size: 1.5em;
+}
+
+.titreSondage {
+	color: var(--vertClair);
+	display:block;
+	margin-top:50px;
+	font-size:1.5rem;
+}
+.greenHover:hover {
+	color: var(--vertClair);
+}
+#formulaireAjouterPropositions input {
+	width:50%;
+}
+
+/* Aide */
+#inscriptionImage {
+	max-width: 35%;
+}
+#lien {
+	color:var(--vertClair);
+}
+
+/* FOOTER */
+footer {
+	background-color:  var(--vertClair);
+	padding: 25px;
+	margin-top:50px;
+}
+footer nav {
+	display:flex;
+	justify-content: space-around;
+	align-items: baseline;
+	flex-wrap: wrap;
+}
+footer nav a:hover {
+	color:white;
+}
+/* LICENCE */
+
+/* Ce qui concerne le footer */
+
+/*responsive*/
+
+@media screen and (max-width: 640px) {
+
+	#formulaireIndex form {
+		margin-bottom:50px;
+		flex-basis: 100%;
+	}
+	header nav{
+		flex-wrap: wrap;
+	}
+	header nav div{
+		flex-basis: 100%;
+	}
+	header nav a{
+		margin-bottom: 25px;
+		flex-basis: 100%;
+	}
+	#affichageSondage {
+		display: none;
+	}
+	#sondagemobil {
+		display: block;
+	}
+	footer nav a, footer nav p {
+		flex-basis: 100%;
+		margin: 15px 0;
+	}
+}	
+
+.img404 {
+	display: block;
+	margin: 25px auto;
+	max-width: 80%;
+}

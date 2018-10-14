@@ -1,0 +1,27 @@
+{% extends '@SOUser/layout.html.twig' %}
+
+{% block fos_user_content %}
+
+<h1>Votre espace personnel</h1>
+
+<div class="fos_user_user_show">
+    <p>Votre identifiant : {{ user.username }}</p>
+    <p>Votre email : {{ user.email }}</p>
+    <a href="{{path('fos_user_change_password')}}" class="submit">Changer de mot de passe</a>
+    <a href="{{path('fos_user_profile_edit')}}" class="submit">Editer le profile</a>
+</div>
+
+<hr>
+
+<h2>Ajouter un nouveau sodage</h2>
+
+{{ include("SOPlatformBundle:Formulaire:sondage.html.twig") }}
+
+<hr>
+
+<h2>Vos sondages : {{ user.sondages }}</h2>
+
+{{ include("SOPlatformBundle:Sondage:listeSondage.html.twig") }}
+
+{% endblock fos_user_content %}
+

@@ -1,0 +1,19 @@
+{% extends '@SOPlatform/layout.html.twig' %}
+
+{% block body %}
+<p>{{ message }}</p>
+<h1>{{ sondage.titre }}</h1>
+<p>{{ sondage.libelle }}</p>
+<ul>
+{% for propal in propositions %}
+    <li>
+        <a href="{{ path('so_platform_propositions_delete', {'id': propal.id , 'sondage': sondage.id}) }}" class="non"><i class="fas fa-trash-alt"></i> </a>
+        {{ propal.titre }}
+    </li>
+{% endfor %}
+</ul>
+{{ form_start(form) }}
+{{ form_rest(form) }}
+{{ form_end(form) }}
+
+{% endblock body %}

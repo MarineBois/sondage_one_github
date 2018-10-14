@@ -1,0 +1,31 @@
+so_platform_homepage:
+    path:     /
+    defaults: { _controller: SOPlatformBundle:Index:index }
+
+so_platform_aide:
+    path:   /aide
+    defaults: { _controller: SOPlatformBundle:Aide:aide }
+
+so_platform_sondage:
+    path: /sondage/{id}
+    defaults: 
+        _controller: SOPlatformBundle:Sondage:affichage
+    requirements:
+        id: \d+
+
+so_platform_propositions:
+    path: /proposition/{id}
+    defaults:
+        _controller: SOPlatformBundle:Proposition:show
+
+so_platform_propositions_delete:
+    path: /proposition_delete/{id}&{sondage}
+    defaults:
+        _controller: SOPlatformBundle:Proposition:supprimer
+
+so_platform_sondage_delete:
+    path: /sondage_delete/{id}
+    defaults:
+        _controller: SOPlatformBundle:Sondage:supprimer
+    requirements:
+        id: \d+

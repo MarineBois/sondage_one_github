@@ -1,0 +1,31 @@
+
+{% for sondage in listeSondage %}
+    <a href="{{ path('so_platform_sondage', {'id': sondage.id}) }}" class="titreSondage">{{ sondage.titre }}</a>
+    <p class="step">{{ sondage.libelle }}</p>
+    <table class="vosSondages"> 
+        <thead>
+            <tr>
+                <th>Proppositions</th>
+                <th>Réponses positives</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for proposition in sondage.propositions %}
+            <tr>
+                <td> {{ proposition.titre }} </td>
+                <td> 
+                    {% set nb = 0 %}    
+                    {% for prop in proposition.reponses %} 
+                    {% set nb = nb +1 %} 
+                    {% endfor %}
+                    {{ nb }}   
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>    
+    <a href="{{ path('so_platform_propositions', {'id': sondage.id}) }}" class="submit">Ajouter/supprimer des propositions</a>
+    <p>Partagez ce sondage : <strong>{{ absolute_url(path('so_platform_sondage', {'id': sondage.id})) }}</strong></p>
+    <a href="{{ path('so_platform_sondage_delete', {'id': sondage.id}) }}" class="non"><i class="fas fa-trash-alt"></i> Supprimer ce sondage</a>
+{% endfor %}
+      

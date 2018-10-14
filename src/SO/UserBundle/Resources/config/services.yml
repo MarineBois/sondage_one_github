@@ -1,0 +1,4 @@
+services:
+#    so_user.example:
+#        class: SO\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: contact@sondageone.fr
+    mailer_password: null
+    secret: seret
+    database_host: Localhost
+    database_port: null
+    database_name: sondageone
+    database_user: root
+    database_password: null

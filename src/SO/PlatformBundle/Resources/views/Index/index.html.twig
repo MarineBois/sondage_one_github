@@ -1,0 +1,41 @@
+{% extends '@SOPlatform/layout.html.twig' %}
+
+{% block body %}
+<!--MAIN CONTENT-->
+<main>
+    <h1>Créer vos propres sondages et partagez les ! </h1>
+    <h2>Grace à Sondage One vous pouvez créer vos propres sondages en ligne et les diffuser à qui vous le souhaitez !</h2>
+
+    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+    <section>
+        <a href="{{ path('so_user_profile') }}" class="lien">
+            <div>
+            <h3>Accéder à votre espace personnel</h3>
+            <p class="step">A partir de cet espace vous pourrez créer de nouveau sondages, et visualiser d'un coup d'oeil qui a répondu</p>
+            </div>
+        </a>	
+    </section>
+    {% endif %}
+    <section>
+        <a href="{{ path('so_platform_aide') }}" class="lien">
+            <div>
+                <h3>Comment ça fonctionne ? </h3>
+                    <p class="step">Vous avez une soirée à organiser ?</p>
+                    <p class="step">Inscrivez-vous</p>
+                    <p class="step">Créer votre sondage en proposant vos idées de sorties</p>
+                    <p class="step">Partagez-le à vos amis</p>
+            </div>
+        </a>
+    </section>
+
+
+    <section>
+        <a href="mailto:contact@sondageone.fr" class="lien">
+            <div>
+            <h3>Parce que votre avis compte</h3>
+            <p class="step">Prenez un moment pour dire ce que vous pensez de ce site en nous envoyant un petit message.</p>
+            </div>
+        </a>	
+    </section>
+</main>
+{% endblock %}
