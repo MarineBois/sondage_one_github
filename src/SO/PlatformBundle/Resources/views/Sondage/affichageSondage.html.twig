@@ -16,13 +16,13 @@
     </thead>
     <tbody>
         <tr>
-            <form action="{{ action }}" method="post">
+            <form action="{{ path('so_platform_reponse', {'id': sondage.id})}}" method="post">
             <td>
                 <input name="personne" placeholder="Votre pseudo*">
             </td>
             {% for proposition in propositions %}
             <td>
-                <input type=checkbox id="oui" name="{{ proposition.id }}" value="{{ proposition.id }}">
+                <input type=checkbox id="oui" name="proposition[]" value="{{ proposition.id }}">
                 </td>
             {% endfor %}
             <td>
@@ -40,6 +40,8 @@
                         {% for prop in personne %}
                         {% if (prop.proposition.id == proposition.id) %}
                             <i class="fas fa-check oui"></i>
+                        {% else %}
+                            <i class="fas fa-times non"></i>
                         {% endif %}
                         {% endfor %}  
                     </td>

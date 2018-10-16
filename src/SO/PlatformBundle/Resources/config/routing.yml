@@ -29,3 +29,15 @@ so_platform_sondage_delete:
         _controller: SOPlatformBundle:Sondage:supprimer
     requirements:
         id: \d+
+
+so_platform_error:
+    path: /error403
+    defaults:
+        _controller: SOPlatformBundle:Index:error403
+
+so_platform_reponse:
+    path: /reponse_add/{id}
+    defaults:
+        _controller: SOPlatformBundle:Reponse:ajouter
+    requirements:
+        id: \d+

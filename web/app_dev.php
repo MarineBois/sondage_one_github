@@ -18,6 +18,14 @@ use Symfony\Component\HttpFoundation\Request;
 //     exit('You are not allowed to access this file. Check '.basename(__FILE__).' for more information.');
 // }
 
+if (!in_array(@$_SERVER['REMOTE_ADDR'], array(
+    '192.168.1.19',
+    '::1',
+  ))) {
+    header('Location: error403');
+    exit();
+  }
+
 require __DIR__.'/../vendor/autoload.php';
 Debug::enable();
 
